@@ -1,75 +1,74 @@
-// TODO: Include packages needed for this application
+
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const createreadme  = require('./createreadme');
 
-// TODO: Create an array of questions for user input
+
 const questions = [
     {
       type: 'input',
       name: 'github',
-      message: 'What is your GitHub username?',
+      message: 'GitHub username?',
     },
     {
       type: 'input',
       name: 'email',
-      message: 'What is your email address?',
+      message: 'Email address?',
     },
     {
       type: 'input',
       name: 'title',
-      message: "What is your project's name?",
+      message:'Project name?',
     },
     {
       type: 'input',
       name: 'description',
-      message: 'Please write a short description of your project',
+      message: 'Project discription?',
     },
     {
       type: 'list',
       name: 'license',
-      message: 'What kind of license should your project have?',
-      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+      message: 'Project licence?',
+      choices: [ 'None','Apache License 2.0','GNU GPLv3','NPM','ISC'],
     },
     {
       type: 'input',
       name: 'installation',
-      message: 'What command should be run to install dependencies?',
+      message: 'What should be installed to run?',
       default: 'npm i',
     },
     {
       type: 'input',
       name: 'test',
-      message: 'What command should be run to run tests?',
+      message: 'How does one run a test',
       default: 'npm test',
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'What does the user need to know about using the repo?',
+      message: 'Does the user need any additional information for usage?',
     },
     {
       type: 'input',
       name: 'contributing',
-      message: 'What does the user need to know about contributing to the repo?',
+      message: 'Does the user need any additional information for  contribution',
     },
   ];
   
 
-// TODO: Create a function to write README file
+
 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
   }
 
-// TODO: Create a function to initialize app
-function init() {
+function run() {
     inquirer.prompt(questions).then((inquirerResponses) => {
-      console.log('Generating README...');
-      writeToFile('README.md', generateMarkdown({ ...inquirerResponses }));
+     
+      writeToFile('README.md', createreadme({ ...inquirerResponses }));
     });
   }
 
-// Function call to initialize app
-init();
+
+run();
