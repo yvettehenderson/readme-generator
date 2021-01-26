@@ -2,7 +2,7 @@
 
 ## Your Task
 
-Here is a link to my vidoe
+Here is a link to my video
 https://drive.google.com/file/d/1St91rUJl1S672ALNKEBHK5d99ch5Z4oF/view
 
 
