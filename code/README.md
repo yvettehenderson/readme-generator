@@ -42,5 +42,5 @@ npm test
 
 
 ## Questions
-For questions regaurding this repo please reach out to  non(https://github.com/non/).
+For questions regaurding this repo please reach out to  (https://github.com//).
 
