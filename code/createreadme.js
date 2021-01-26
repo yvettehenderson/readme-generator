@@ -1,7 +1,7 @@
 
 function yesLicense(license) {
   if (license !== 'None') {
-    return `\n License\n`
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
   }
   return '';
 }
